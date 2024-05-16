@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task 4.1 Basic Calculator</title>
+    </head>
+    <!--Configuring the background color and the text alignment-->
+    <body style="background-color: black">
+        <h1 style="text-align: center; color: red">Basic Calculator</h1>
+        <!--Creating the UI for the calculator. This includes text boxes, an option for the different arithmetics and the calculate button-->
+        <form style="text-align: center" id="calculatorForm">
+            <!--Configuration for the text boxes-->
+            <input
+                style="padding: 10px 20px; display: flexbox; border-radius: 5px"
+                type="number"
+                name="num1"
+                placeholder="Value 1"
+                required
+            /><br />
+            <input
+                style="padding: 10px 20px; display: flexbox; border-radius: 5px"
+                type="number"
+                name="num2"
+                placeholder="Value 2"
+                required
+            /><br />
+            <!--Configuration for the options drop-down menu-->
+            <select
+                style="
+                    padding: 5px 10px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    border-radius: 20px;
+                "
+                name="arithmetic"
+                id="arithmetic"
+            >
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+                <option value="multiply">Multiply</option>
+                <option value="divide">Divide</option></select
+            ><br />
+            <button type="button" id="calculatebutton">Calculate</button>
+        </form>
+        <p1
+            style="
+                color: white;
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+                font-size: larger;
+                font-family: fantasy;
+            "
+            >This program uses node.js and express to deploy a microservice
+            which has the ability to deliver a functional basic calculator.
+            arithmetics available are addition, subtraction, multiplication,
+            division</p1
+        >
+        <!--JavaScript code to execute the calculation when the button is clicked. It retrieves both of the values written within the text boxes and the "operation" selected. Then it constructs a URL with all the inputs collected-->
+        <script>
+            document
+                .getElementById("calculatebutton")
+                .addEventListener("click", function () {
+                    const num1 = document.getElementsByName("num1")[0].value;
+                    const num2 = document.getElementsByName("num2")[0].value;
+                    const arithmetic =
+                        document.getElementById("arithmetic").value;
+                    window.location.href = `/result/${arithmetic}/${num1}/${num2}`;
+                });
+        </script>
+    </body>
+</html>

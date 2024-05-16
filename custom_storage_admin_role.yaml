@@ -1,0 +1,5 @@
+title: Custom Storage Admin
+description: Grants full control over Google Cloud Storage resources.
+stage: ALPHA
+includedPermissions:
+    - storage.*
